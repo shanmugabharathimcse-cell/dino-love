@@ -1,0 +1,2030 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Will You Marry Me? 💍💕</title>
+
+
+    <style>
+
+        /* ==================================================
+           BASIC SETTINGS
+        ================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            font-family:
+                "Poppins",
+                "Segoe UI",
+                Arial,
+                sans-serif;
+
+            overflow: hidden;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            transition:
+                background 1s ease;
+
+        }
+
+
+        /* ==================================================
+           PINK THEME
+        ================================================== */
+
+        body.pink-theme {
+
+            background:
+
+                radial-gradient(
+                    circle at 15% 20%,
+                    #ffffff 0%,
+                    transparent 25%
+                ),
+
+                radial-gradient(
+                    circle at 85% 10%,
+                    #ffc1d9 0%,
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 10% 90%,
+                    #ffb6d2 0%,
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #ffd6e7,
+                    #ffedf5,
+                    #ffc9dc
+                );
+
+        }
+
+
+        /* ==================================================
+           DINOSAUR THEME
+        ================================================== */
+
+        body.dino-theme {
+
+            background:
+
+                radial-gradient(
+                    circle at 15% 15%,
+                    #d8ffd8 0%,
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 85% 20%,
+                    #b8efc0 0%,
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #b8e6a3,
+                    #dff5c8,
+                    #a9d98f
+                );
+
+        }
+
+
+        /* ==================================================
+           MAIN CARD
+        ================================================== */
+
+        .container {
+
+            width: 90%;
+
+            max-width: 650px;
+
+            max-height: 92vh;
+
+            overflow-y: auto;
+
+            padding: 42px 30px;
+
+            text-align: center;
+
+            border-radius: 35px;
+
+            position: relative;
+
+            z-index: 5;
+
+            backdrop-filter: blur(15px);
+
+            transition:
+                background 1s ease,
+                box-shadow 1s ease,
+                border 1s ease;
+
+        }
+
+
+        /* Pink Card */
+
+        .pink-card {
+
+            background:
+                rgba(255, 245, 249, 0.92);
+
+            border:
+                2px solid
+                rgba(255, 255, 255, 0.9);
+
+            box-shadow:
+
+                0 20px 60px
+                rgba(214, 51, 108, 0.22),
+
+                0 0 40px
+                rgba(255, 140, 180, 0.18);
+
+        }
+
+
+        /* Dinosaur Card */
+
+        .dino-card {
+
+            background:
+                rgba(244, 255, 237, 0.94);
+
+            border:
+                3px solid #78a85b;
+
+            box-shadow:
+
+                0 20px 60px
+                rgba(57, 100, 45, 0.25);
+
+        }
+
+
+        /* ==================================================
+           RING
+        ================================================== */
+
+        .ring {
+
+            font-size: 75px;
+
+            animation:
+                ringBounce 1.8s
+                ease-in-out infinite;
+
+        }
+
+
+        @keyframes ringBounce {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0)
+                    rotate(-5deg);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-12px)
+                    rotate(5deg);
+
+            }
+
+        }
+
+
+        /* ==================================================
+           HEADINGS
+        ================================================== */
+
+        h1 {
+
+            color: #d81b60;
+
+            font-size: 42px;
+
+            margin: 15px 0;
+
+            text-shadow:
+                0 3px 10px
+                rgba(216, 27, 96, 0.15);
+
+        }
+
+
+        h2 {
+
+            color: #c2185b;
+
+        }
+
+
+        p {
+
+            color: #7a3f57;
+
+            font-size: 18px;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* ==================================================
+           SECRET QUESTION
+        ================================================== */
+
+        .question-box {
+
+            margin-top: 30px;
+
+        }
+
+
+        .question {
+
+            color: #c2185b;
+
+            font-size: 21px;
+
+            font-weight: bold;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        /* ==================================================
+           INPUT
+        ================================================== */
+
+        input {
+
+            width: 80%;
+
+            padding: 15px 20px;
+
+            border-radius: 50px;
+
+            border:
+                2px solid #f48fb1;
+
+            background: #fff8fb;
+
+            color: #880e4f;
+
+            font-size: 16px;
+
+            text-align: center;
+
+            outline: none;
+
+            transition: 0.3s;
+
+        }
+
+
+        input::placeholder {
+
+            color: #d98aa7;
+
+        }
+
+
+        input:focus {
+
+            border-color: #e91e63;
+
+            box-shadow:
+
+                0 0 0 4px
+                rgba(233, 30, 99, 0.10),
+
+                0 8px 20px
+                rgba(233, 30, 99, 0.12);
+
+        }
+
+
+        /* ==================================================
+           BUTTONS
+        ================================================== */
+
+        button {
+
+            border: none;
+
+            padding: 15px 32px;
+
+            border-radius: 50px;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.25s,
+                box-shadow 0.25s,
+                background 0.25s;
+
+        }
+
+
+        /* ==================================================
+           UNLOCK BUTTON
+        ================================================== */
+
+        #unlockBtn {
+
+            margin-top: 16px;
+
+            color: white;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #ec407a,
+                    #d81b60
+                );
+
+            box-shadow:
+
+                0 8px 20px
+                rgba(216, 27, 96, 0.3);
+
+        }
+
+
+        #unlockBtn:hover {
+
+            transform:
+                translateY(-3px)
+                scale(1.03);
+
+            box-shadow:
+
+                0 12px 25px
+                rgba(216, 27, 96, 0.4);
+
+        }
+
+
+        /* ==================================================
+           MESSAGE
+        ================================================== */
+
+        #message {
+
+            margin-top: 15px;
+
+            font-weight: bold;
+
+            min-height: 25px;
+
+        }
+
+
+        /* ==================================================
+           PROPOSAL AREA
+        ================================================== */
+
+        #proposalArea {
+
+            display: none;
+
+            margin-top: 35px;
+
+            padding-top: 20px;
+
+            border-top:
+                2px dashed #f3a0bd;
+
+        }
+
+
+        .buttons {
+
+            height: 130px;
+
+            position: relative;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 30px;
+
+        }
+
+
+        /* ==================================================
+           YES BUTTON
+        ================================================== */
+
+        #yesBtn {
+
+            color: white;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #ff4081,
+                    #e91e63,
+                    #c2185b
+                );
+
+            box-shadow:
+
+                0 10px 25px
+                rgba(233, 30, 99, 0.35);
+
+        }
+
+
+        #yesBtn:hover {
+
+            transform: scale(1.12);
+
+            box-shadow:
+
+                0 15px 30px
+                rgba(233, 30, 99, 0.45);
+
+        }
+
+
+        /* ==================================================
+           NO BUTTON
+        ================================================== */
+
+        #noBtn {
+
+            color: #d81b60;
+
+            background: white;
+
+            border:
+                2px solid #f48fb1;
+
+            box-shadow:
+                0 5px 15px
+                rgba(216, 27, 96, 0.10);
+
+        }
+
+
+        #noBtn:hover {
+
+            background: #fff0f5;
+
+        }
+
+
+        /* ==================================================
+           SUCCESS PAGE
+        ================================================== */
+
+        #successPage {
+
+            display: none;
+
+        }
+
+
+        .big-heart {
+
+            font-size: 95px;
+
+            filter:
+                drop-shadow(
+                    0 10px 15px
+                    rgba(233, 30, 99, 0.25)
+                );
+
+            animation:
+                heartbeat 1s infinite;
+
+        }
+
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+
+                transform: scale(1);
+
+            }
+
+            50% {
+
+                transform: scale(1.2);
+
+            }
+
+        }
+
+
+        .success-title {
+
+            color: #e91e63;
+
+            font-size: 44px;
+
+            text-shadow:
+
+                0 4px 12px
+                rgba(233, 30, 99, 0.2);
+
+        }
+
+
+        /* ==================================================
+           COUPLE PHOTO
+        ================================================== */
+
+        .couple-photo {
+
+            width: 260px;
+
+            height: 300px;
+
+            object-fit: cover;
+
+            border-radius: 25px;
+
+            border:
+                6px solid white;
+
+            box-shadow:
+
+                0 10px 30px
+                rgba(216, 27, 96, 0.3);
+
+            margin: 15px auto;
+
+            display: block;
+
+        }
+
+
+        .photo-caption {
+
+            color: #d81b60;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+        }
+
+
+        .love-message {
+
+            color: #743b55;
+
+            font-size: 19px;
+
+            line-height: 1.9;
+
+        }
+
+
+        /* ==================================================
+           NEXT BUTTON
+        ================================================== */
+
+        .next-button {
+
+            margin-top: 20px;
+
+            color: white;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #ff4081,
+                    #d81b60
+                );
+
+            box-shadow:
+
+                0 8px 20px
+                rgba(216, 27, 96, 0.3);
+
+        }
+
+
+        .next-button:hover {
+
+            transform:
+                scale(1.05);
+
+        }
+
+
+        /* ==================================================
+           DINOSAUR PAGE
+        ================================================== */
+
+        #dinoPage {
+
+            display: none;
+
+        }
+
+
+        .dino-title {
+
+            color: #356b35;
+
+            font-size: 42px;
+
+            margin-bottom: 5px;
+
+            text-shadow:
+                0 3px 5px
+                rgba(53, 107, 53, 0.2);
+
+        }
+
+
+        .dino-subtitle {
+
+            color: #527d43;
+
+            font-size: 18px;
+
+        }
+
+
+        .dinosaurs {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: flex-end;
+
+            gap: 15px;
+
+            margin: 20px 0;
+
+        }
+
+
+        .dino {
+
+            font-size: 90px;
+
+            animation:
+                dinoBounce 2s
+                ease-in-out infinite;
+
+        }
+
+
+        .dino:nth-child(2) {
+
+            font-size: 105px;
+
+            animation-delay:
+                0.3s;
+
+        }
+
+
+        @keyframes dinoBounce {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-12px);
+
+            }
+
+        }
+
+
+        .dino-love {
+
+            background:
+                rgba(255,255,255,0.65);
+
+            border-radius: 25px;
+
+            padding: 20px;
+
+            margin-top: 15px;
+
+            border:
+                2px dashed #78a85b;
+
+        }
+
+
+        .dino-love h2 {
+
+            color: #3d7538;
+
+            font-size: 27px;
+
+        }
+
+
+        .dino-love p {
+
+            color: #496943;
+
+        }
+
+
+        .forever {
+
+            color: #3d7538;
+
+            font-size: 25px;
+
+            font-weight: bold;
+
+            margin-top: 20px;
+
+        }
+
+
+        .dino-button {
+
+            margin-top: 20px;
+
+            color: white;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #5f9f55,
+                    #39783a
+                );
+
+            box-shadow:
+
+                0 8px 20px
+                rgba(57, 120, 58, 0.3);
+
+        }
+
+
+        .dino-button:hover {
+
+            transform:
+                scale(1.08);
+
+        }
+
+
+        /* ==================================================
+           FLOATING EMOJIS
+        ================================================== */
+
+        .floating {
+
+            position: fixed;
+
+            bottom: -40px;
+
+            font-size: 25px;
+
+            pointer-events: none;
+
+            animation:
+                floatEmoji 6s linear forwards;
+
+            z-index: 1;
+
+        }
+
+
+        @keyframes floatEmoji {
+
+            0% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg)
+                    scale(0.7);
+
+                opacity: 0;
+
+            }
+
+            20% {
+
+                opacity: 1;
+
+            }
+
+            100% {
+
+                transform:
+                    translateY(-110vh)
+                    rotate(360deg)
+                    scale(1.2);
+
+                opacity: 0;
+
+            }
+
+        }
+
+
+        /* ==================================================
+           MOBILE
+        ================================================== */
+
+        @media (max-width: 500px) {
+
+            .container {
+
+                padding:
+                    32px 20px;
+
+                max-height: 94vh;
+
+            }
+
+
+            h1 {
+
+                font-size: 32px;
+
+            }
+
+
+            .success-title,
+            .dino-title {
+
+                font-size: 32px;
+
+            }
+
+
+            input {
+
+                width: 95%;
+
+            }
+
+
+            .couple-photo {
+
+                width: 220px;
+
+                height: 260px;
+
+            }
+
+
+            .dino {
+
+                font-size: 65px;
+
+            }
+
+
+            .dino:nth-child(2) {
+
+                font-size: 80px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="pink-theme">
+
+
+    <!-- ==================================================
+         PAGE 1 — PROPOSAL
+    ================================================== -->
+
+    <div
+        class="container pink-card"
+        id="proposalPage"
+    >
+
+
+        <div class="ring">
+
+            💍
+
+        </div>
+
+
+        <h1>
+
+            Will You Marry Me? ❤️
+
+        </h1>
+
+
+        <p>
+
+            Before you can answer...
+
+            <br>
+
+            you have to prove that
+            you really know me 😌💕
+
+        </p>
+
+
+        <!-- SECRET QUESTION -->
+
+        <div class="question-box">
+
+
+            <div class="question">
+
+                💕 One Little Question...
+
+                <br><br>
+
+                What is my favorite animal? 🦖
+
+            </div>
+
+
+            <input
+                type="text"
+                id="answer"
+                placeholder="Type your answer..."
+                autocomplete="off"
+            >
+
+
+            <br>
+
+
+            <button id="unlockBtn">
+
+                Unlock ❤️
+
+            </button>
+
+
+            <div id="message"></div>
+
+
+        </div>
+
+
+        <!-- MARRIAGE QUESTION -->
+
+        <div id="proposalArea">
+
+
+            <h2>
+
+                You passed! 🥹❤️
+
+            </h2>
+
+
+            <p>
+
+                Now there is only one question left...
+
+            </p>
+
+
+            <h1 style="font-size:32px;">
+
+                Will You Marry Me? 💍
+
+            </h1>
+
+
+            <div class="buttons">
+
+
+                <button id="yesBtn">
+
+                    YES ❤️
+
+                </button>
+
+
+                <button id="noBtn">
+
+                    NO 😏
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ==================================================
+         PAGE 2 — YES + PHOTO
+    ================================================== -->
+
+    <div
+        class="container pink-card"
+        id="successPage"
+    >
+
+
+        <div class="big-heart">
+
+            ❤️
+
+        </div>
+
+
+        <h1 class="success-title">
+
+            YOU SAID YES!!! 🥹💍
+
+        </h1>
+
+
+        <!--
+            IMPORTANT:
+
+            Put your couple photo in the
+            SAME FOLDER as this HTML file.
+
+            Rename your photo:
+
+            couple.jpg
+        -->
+
+        <img
+            src="couple.jpg"
+            alt="Our Memory ❤️"
+            class="couple-photo"
+        >
+
+
+        <div class="photo-caption">
+
+            My favorite person ❤️
+
+        </div>
+
+
+        <p class="love-message">
+
+            I knew you would say yes... 🥹❤️
+
+            <br><br>
+
+            From this moment,
+
+            I promise to choose you,
+
+            love you,
+
+            annoy you,
+
+            support you,
+
+            and stand beside you
+
+            through everything.
+
+            <br><br>
+
+            You are not just my boyfriend anymore...
+
+            <br><br>
+
+            You are my
+
+            <b>future husband.</b>
+
+            💍❤️
+
+        </p>
+
+
+        <button
+            class="next-button"
+            id="dinoButton"
+        >
+
+            One More Surprise 🦖💕
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- ==================================================
+         PAGE 3 — DINOSAUR THEME
+    ================================================== -->
+
+    <div
+        class="container dino-card"
+        id="dinoPage"
+    >
+
+
+        <div class="dinosaurs">
+
+
+            <div class="dino">
+
+                🦖
+
+            </div>
+
+
+            <div class="dino">
+
+                🦕❤️🦖
+
+            </div>
+
+
+        </div>
+
+
+        <h1 class="dino-title">
+
+            OUR LITTLE DINOSAUR LOVE 🦖❤️
+
+        </h1>
+
+
+        <p class="dino-subtitle">
+
+            Because our love is going to last
+
+            <b>millions of years...</b> 🥹
+
+        </p>
+
+
+        <div class="dino-love">
+
+
+            <h2>
+
+                🦕 You + Me 🦖
+
+            </h2>
+
+
+            <p>
+
+                Even if we lived in the dinosaur era,
+
+                I would still find you. ❤️
+
+            </p>
+
+
+            <p>
+
+                I would choose you
+
+                in every lifetime,
+
+                every universe,
+
+                and every era. 🌎💕
+
+            </p>
+
+
+            <p>
+
+                From now until
+
+                <b>the dinosaurs come back...</b>
+
+                🦖😂❤️
+
+            </p>
+
+
+        </div>
+
+
+        <div class="forever">
+
+            🦖💕 FOREVER & EVER 💕🦕
+
+        </div>
+
+
+        <p>
+
+            Our adventure has just begun...
+
+            🌿❤️
+
+        </p>
+
+
+        <button
+            class="dino-button"
+            onclick="celebrate()"
+        >
+
+            I Love You ❤️
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <script>
+
+
+        /* ==================================================
+           SECRET ANSWER
+
+           YOUR ANSWER IS:
+
+           DINO 🦖
+        ================================================== */
+
+        const correctAnswer = "dino";
+
+
+        /* ==================================================
+           GET ELEMENTS
+        ================================================== */
+
+        const answerInput =
+            document.getElementById(
+                "answer"
+            );
+
+
+        const unlockBtn =
+            document.getElementById(
+                "unlockBtn"
+            );
+
+
+        const message =
+            document.getElementById(
+                "message"
+            );
+
+
+        const proposalArea =
+            document.getElementById(
+                "proposalArea"
+            );
+
+
+        const yesBtn =
+            document.getElementById(
+                "yesBtn"
+            );
+
+
+        const noBtn =
+            document.getElementById(
+                "noBtn"
+            );
+
+
+        const proposalPage =
+            document.getElementById(
+                "proposalPage"
+            );
+
+
+        const successPage =
+            document.getElementById(
+                "successPage"
+            );
+
+
+        const dinoPage =
+            document.getElementById(
+                "dinoPage"
+            );
+
+
+        const dinoButton =
+            document.getElementById(
+                "dinoButton"
+            );
+
+
+
+        /* ==================================================
+           CHECK ANSWER
+        ================================================== */
+
+        unlockBtn.addEventListener(
+            "click",
+            function () {
+
+
+                const answer =
+                    answerInput.value
+                    .trim()
+                    .toLowerCase();
+
+
+                /* ============================
+                   CORRECT ANSWER
+                ============================ */
+
+                if (
+                    answer ===
+                    correctAnswer
+                ) {
+
+
+                    message.innerHTML =
+                        "Correct! 🥹🦖❤️ You really know me!";
+
+
+                    message.style.color =
+                        "#28a745";
+
+
+                    /* Show proposal */
+
+                    proposalArea.style.display =
+                        "block";
+
+
+                    /* Lock input */
+
+                    answerInput.disabled =
+                        true;
+
+
+                    unlockBtn.disabled =
+                        true;
+
+
+                    /*
+                       Put YES and NO
+                       back in their normal
+                       position.
+                    */
+
+                    yesBtn.style.position =
+                        "static";
+
+                    yesBtn.style.left =
+                        "";
+
+                    yesBtn.style.top =
+                        "";
+
+
+                    noBtn.style.position =
+                        "static";
+
+                    noBtn.style.left =
+                        "";
+
+                    noBtn.style.top =
+                        "";
+
+
+                }
+
+
+                /* ============================
+                   WRONG ANSWER
+                ============================ */
+
+                else {
+
+
+                    message.innerHTML =
+                        "Wrong answer 😏🦖💕 Try again!";
+
+
+                    message.style.color =
+                        "#e91e63";
+
+
+                    answerInput.value =
+                        "";
+
+                }
+
+            }
+        );
+
+
+
+        /* ==================================================
+           ENTER KEY
+        ================================================== */
+
+        answerInput.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    event.key === "Enter"
+                ) {
+
+                    unlockBtn.click();
+
+                }
+
+            }
+        );
+
+
+
+        /* ==================================================
+           MOVE BUTTON
+        ================================================== */
+
+        function moveButton(button) {
+
+
+            const maxX =
+                window.innerWidth -
+                button.offsetWidth -
+                20;
+
+
+            const maxY =
+                window.innerHeight -
+                button.offsetHeight -
+                20;
+
+
+            const randomX =
+                Math.max(
+                    10,
+                    Math.random() * maxX
+                );
+
+
+            const randomY =
+                Math.max(
+                    10,
+                    Math.random() * maxY
+                );
+
+
+            button.style.position =
+                "fixed";
+
+
+            button.style.left =
+                randomX + "px";
+
+
+            button.style.top =
+                randomY + "px";
+
+        }
+
+
+
+        /* ==================================================
+           YES BUTTON
+           
+           BEFORE ANSWER:
+           RUN AWAY 😏
+
+           AFTER ANSWER:
+           WORKS ❤️
+        ================================================== */
+
+        yesBtn.addEventListener(
+            "mouseenter",
+            function() {
+
+
+                if (
+                    !answerInput.disabled
+                ) {
+
+                    moveButton(
+                        yesBtn
+                    );
+
+                }
+
+            }
+        );
+
+
+        yesBtn.addEventListener(
+            "touchstart",
+            function() {
+
+
+                if (
+                    !answerInput.disabled
+                ) {
+
+                    moveButton(
+                        yesBtn
+                    );
+
+                }
+
+            }
+        );
+
+
+
+        /* ==================================================
+           NO BUTTON
+
+           ALWAYS RUNS AWAY 😂
+        ================================================== */
+
+        noBtn.addEventListener(
+            "mouseenter",
+            function() {
+
+                moveButton(
+                    noBtn
+                );
+
+            }
+        );
+
+
+        noBtn.addEventListener(
+            "touchstart",
+            function() {
+
+                moveButton(
+                    noBtn
+                );
+
+            }
+        );
+
+
+        noBtn.addEventListener(
+            "click",
+            function() {
+
+                moveButton(
+                    noBtn
+                );
+
+            }
+        );
+
+
+
+        /* ==================================================
+           YES → PHOTO PAGE
+        ================================================== */
+
+        yesBtn.addEventListener(
+            "click",
+            function() {
+
+
+                /*
+                   Extra protection.
+                   YES cannot work until
+                   DINO is answered.
+                */
+
+                if (
+                    !answerInput.disabled
+                ) {
+
+                    moveButton(
+                        yesBtn
+                    );
+
+                    return;
+
+                }
+
+
+                /* Hide first page */
+
+                proposalPage.style.display =
+                    "none";
+
+
+                /* Show photo page */
+
+                successPage.style.display =
+                    "block";
+
+
+                /* Start hearts */
+
+                startHearts();
+
+            }
+        );
+
+
+
+        /* ==================================================
+           PHOTO PAGE → DINOSAUR PAGE
+        ================================================== */
+
+        dinoButton.addEventListener(
+            "click",
+            function() {
+
+
+                /* Hide photo page */
+
+                successPage.style.display =
+                    "none";
+
+
+                /* Change background */
+
+                document.body.className =
+                    "dino-theme";
+
+
+                /* Show dinosaur page */
+
+                dinoPage.style.display =
+                    "block";
+
+
+                /* Start dinosaur animation */
+
+                startDinoAnimation();
+
+            }
+        );
+
+
+
+        /* ==================================================
+           PINK FLOATING HEARTS
+        ================================================== */
+
+        function startHearts() {
+
+
+            setInterval(
+                function() {
+
+
+                    const heart =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    heart.className =
+                        "floating";
+
+
+                    const hearts = [
+
+                        "❤️",
+
+                        "💕",
+
+                        "💗",
+
+                        "💖",
+
+                        "💘",
+
+                        "💞",
+
+                        "💓",
+
+                        "🌸"
+
+                    ];
+
+
+                    heart.innerHTML =
+                        hearts[
+                            Math.floor(
+                                Math.random() *
+                                hearts.length
+                            )
+                        ];
+
+
+                    heart.style.left =
+                        Math.random() *
+                        100 +
+                        "vw";
+
+
+                    heart.style.fontSize =
+                        (
+                            18 +
+                            Math.random() * 20
+                        ) +
+                        "px";
+
+
+                    heart.style.animationDuration =
+                        (
+                            4 +
+                            Math.random() * 3
+                        ) +
+                        "s";
+
+
+                    document.body.appendChild(
+                        heart
+                    );
+
+
+                    setTimeout(
+                        function() {
+
+                            heart.remove();
+
+                        },
+                        7000
+                    );
+
+
+                },
+                350
+            );
+
+        }
+
+
+
+        /* ==================================================
+           DINOSAUR FLOATING ANIMATION
+        ================================================== */
+
+        function startDinoAnimation() {
+
+
+            setInterval(
+                function() {
+
+
+                    const dino =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    dino.className =
+                        "floating";
+
+
+                    const dinoEmojis = [
+
+                        "🦖",
+
+                        "🦕",
+
+                        "🌿",
+
+                        "❤️",
+
+                        "💕",
+
+                        "🥚",
+
+                        "✨"
+
+                    ];
+
+
+                    dino.innerHTML =
+                        dinoEmojis[
+                            Math.floor(
+                                Math.random() *
+                                dinoEmojis.length
+                            )
+                        ];
+
+
+                    dino.style.left =
+                        Math.random() *
+                        100 +
+                        "vw";
+
+
+                    dino.style.fontSize =
+                        (
+                            20 +
+                            Math.random() * 25
+                        ) +
+                        "px";
+
+
+                    dino.style.animationDuration =
+                        (
+                            4 +
+                            Math.random() * 4
+                        ) +
+                        "s";
+
+
+                    document.body.appendChild(
+                        dino
+                    );
+
+
+                    setTimeout(
+                        function() {
+
+                            dino.remove();
+
+                        },
+                        8000
+                    );
+
+
+                },
+                500
+            );
+
+        }
+
+
+
+        /* ==================================================
+           FINAL CELEBRATION
+        ================================================== */
+
+        function celebrate() {
+
+
+            for (
+                let i = 0;
+                i < 35;
+                i++
+            ) {
+
+
+                setTimeout(
+                    function() {
+
+
+                        const emoji =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        emoji.className =
+                            "floating";
+
+
+                        const emojis = [
+
+                            "🦖",
+
+                            "🦕",
+
+                            "❤️",
+
+                            "💕",
+
+                            "🌿",
+
+                            "✨",
+
+                            "🥚"
+
+                        ];
+
+
+                        emoji.innerHTML =
+                            emojis[
+                                Math.floor(
+                                    Math.random() *
+                                    emojis.length
+                                )
+                            ];
+
+
+                        emoji.style.left =
+                            Math.random() *
+                            100 +
+                            "vw";
+
+
+                        emoji.style.fontSize =
+                            (
+                                25 +
+                                Math.random() * 25
+                            ) +
+                            "px";
+
+
+                        document.body.appendChild(
+                            emoji
+                        );
+
+
+                        setTimeout(
+                            function() {
+
+                                emoji.remove();
+
+                            },
+                            7000
+                        );
+
+
+                    },
+                    i * 100
+                );
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
+```
